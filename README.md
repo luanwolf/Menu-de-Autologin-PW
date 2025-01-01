@@ -77,8 +77,9 @@ echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m PT CASINHAS               
 ### 🤝 Colaboração
 Obrigado pelas sugestões e suporte, novas ideias sempre serão acolhidas com muito carinho. 💙
 
-- **UNRL**
+- **unrl.**
 - **Medaline**
+- **kula1840**
 
 > [!TIP]
 > Se precisar de suporte, me procure no Discord pelo meu usuário **Heyash** ou pelo Discord da Level UP com o apelido de **Ly~**
