@@ -1,84 +1,85 @@
  
-# Menu de Autologin PW 💻
+# 🪷 Menu de Autologin PW
 
-Este batch foi feito com carinho para auxiliar os jogadores de Perfect World para efetuar login com várias contas e diversas funcionalidades.
+<p align="center">
+ <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/84398721/399581780-205292fd-b1b9-4798-9510-2e476d2bc56b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250101%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250101T194928Z&X-Amz-Expires=300&X-Amz-Signature=d6a895bfab481e9f16d77a8366687ca761eda1ef653fa99ac9b257c0c89fbf32&X-Amz-SignedHeaders=host" />
+</p>
 
-*Não tenho ligação direta com a Level UP, apenas é algo para ajudar a comunidade ❗*
+Este menu/interface foi feito com carinho para auxiliar os jogadores de Perfect World com várias funcionalidades e facilidades pro dia a dia.
+> [!IMPORTANT]
+> Não tenho ligação direta com a Level UP, apenas é algo para ajudar a comunidade ❗.
 
-
-## Funcionalidades 🎲
-
-- Login de várias contas instantaneamente;
-- Definir atrasos/delays de logins entre contas;
+## 🪪 Funcionalidades
+- Efetuar o login de várias contas simultâneamente;
 - Deslogar todas as contas ao mesmo tempo;
-- Acesso direto ao Discord para verificação do Spoiler Perfeito;
-- Acesso direto ao "Minha conta Level UP".
+- Configurar o atraso de logins entre as contas;
+- Rápido acesso a leitura do "Spoiler Perfeito";
+- Rápido acesso ao "Minha conta Level UP".
 
+## 🤔 Como utilizar o menu
 
-## Configuração do Menu ⚙️
+### ⚙️ Configuração
 
-#### Primeiros passos ✏️
+Abra o documento baixado com qualquer editor de texto.
+> [!TIP]
+> Recomendo Notepad++ ou Visual Studio Code.
 
-Abra o .bat com qualquer editor de texto.
+### 1. Start
+Você deve localizar a função **start**, localizou? Nesta etapa você deve informar qual é o caminho onde seu autologin está salvo em seu computador finalizando com o nome do Autologin. Para facilitar, veja exemplo abaixo:
 
-    Recomendo Notepad++ ou Visual Studio Code
-
-Localize a função **start**, localizou? Você deve informar qual é o caminho onde seu autologin está definido. Conforme exemplo abaixo:
-
-```batch
-start E:\Perfect_World\Contas\'Ly~.lnk   
+```bat
+start D:\Pasta\Contas\'Ly~.lnk   
 ```
 
-Em **echo** você pode informar qual é a conta que está fazendo login para você manter o controle. Veja exemplo abaixo:
-```batch
-start E:\Pasta\Contas\'Ly~.lnk
+### 2. Echo
+Em **echo** você pode informar qual é a conta que está fazendo login para você manter o controle, veja exemplo abaixo:
+
+```bat
 echo Ly~ logado
 ```
 
-Ou, manter o padrão...
-
-```batch
+Por fim, a parte de login para cada conta ficará da seguinte forma:
+```bat
 start D:\Pasta\Contas\'Ly~.lnk
-echo Conta 01 logado
+echo 'Ly~ logado
+timeout /t %TIMEOUT% /nobreak > nul 
+
+start D:\Pasta\Contas\Ly[PSY].lnk
+echo Ly[PSY] logado
+timeout /t %TIMEOUT% /nobreak > nul 
+
+start D:\Pasta\Contas\Ly[EP].lnk
+echo Ly[EP] logado
+timeout /t %TIMEOUT% /nobreak > nul 
+
+start D:\Pasta\Contas\Ly[TM].lnk
+echo Ly[TM] logado
+timeout /t %TIMEOUT% /nobreak > nul 
+...
 ```
 
-Você consegue colocar **quantas contas quiser**, porém recomendo fazer login sempre de 10 em 10 contas.
+> [!NOTE]
+> Você consegue colocar quantas contas quiser, porém recomendo utilizar conforme o modelo, ou seja, **10 contas cada opção**.
 
-Após incluir suas PTs basta renomear no menu substituindo **Título 01, 02 e 03** pelo o que preferir, veja o exemplo:
-```batch
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m01.%ESC%[0m%ESC%[32m PT principal                   ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m02.%ESC%[0m%ESC%[32m PT secundária                  ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m Dançinha                       ⢸
-```
-Ou, manter o padrão...
-
-```batch
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m01.%ESC%[0m%ESC%[32m Titulo 01                       ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m02.%ESC%[0m%ESC%[32m Titulo 02                       ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m Titulo 03                       ⢸
+### 3. Menu
+Após incluir suas contas basta renomear no menu substituindo **Título 01, 02 e 03** pelo o que preferir, veja o exemplo:
+```bat
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m01.%ESC%[0m%ESC%[32m PT FARM                        ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m02.%ESC%[0m%ESC%[32m PT DANÇA                       ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m PT CASINHAS                    ⢸
 ```
 
-Após está configuração basta salvar e executar o .bat 😊
-## Autor 👤
+### ✔️ Pronto, agora basta salvar e executar o arquivo .bat
 
-- **Heyash**
-    - Criação e customização;
-    - Opção para acessar o site da Minha conta Level UP;
-    - Criação da funcionalidade de alteração de atraso de logins;
+------
 
-## Colaboração 🫸🏻🫷🏻
-
+### 👤 Criador: **Heyash**
+### 🤝 Colaboração
 Obrigado pelas sugestões e suporte, novas ideias sempre serão acolhidas com muito carinho. 💙
 
 - **UNRL**
-    - Opção para alternar o atraso de logins entre as contas;
-    - Música de fundo (Se desejar, solicitar via Discord);
 - **Medaline**
-    - Opção para acessar a sala de Spoiler Perfeito abrindo o Discord automáticamente.
 
-## Suporte 🔗
-
-Para suporte, me procure no Discord através do meu usuário **Heyash**.
-
-Você também pode me encontrar no servidor de Discord da Level UP pelo nick de **Ly~**.
+> [!TIP]
+> Se precisar de suporte, me procure no Discord pelo meu usuário **Heyash** ou pelo Discord da Level UP com o apelido de **Ly~**
 
