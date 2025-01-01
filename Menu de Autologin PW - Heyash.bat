@@ -1,10 +1,7 @@
-:: LEIA COM ATENÇÃO!!!!!
-:: Em "START" você deve colocar o local onde está seu autologin, veja o exemplo -> EX: C:\Users\Fulano\Desktop\PW\Conta.lnk
-:: Em "TIMEOUT" você define o tempo de 'atraso' que terá de login para cada conta.
-:: Ficou com dúvidas? Me manda um DM no Discord.     ->    Heyash
+:: LEIA COM ATENÇÃO!
+:: Para aprender a configurar, acesse o repositório no GitHub pelo link 🔗 https://github.com/luanwolf/Menu_Autologin_PW/
+:: Se necessitar de suporte me procure no Discord pelo meu usuário Heyash ou pelo Discord da Level UP com o apelido de Ly~
 
-:: ----------------------------------------------------------
-:: Ignore, são anotações...
 :: Para aceitar acentuação
 chcp 65001 
 
@@ -13,7 +10,6 @@ for /F %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
 :: Início do batchfile
 @echo off
-setlocal enabledelayedexpansion
 
 :: Define o timeout padrão
 set TIMEOUT=5
@@ -44,12 +40,13 @@ echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m Titulo 03                 
 echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m04.%ESC%[0m%ESC%[32m Spoiler Perfeito                ⢸
 echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m05.%ESC%[0m%ESC%[32m Resgatar logue e ganhe          ⢸
 echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m06.%ESC%[0m%ESC%[32m Fechar contas                   ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m07.%ESC%[0m%ESC%[32m Sair                            ⢸
-echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m08.%ESC%[0m%ESC%[32m Configurar atraso de login      ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m07.%ESC%[0m%ESC%[32m Configurar atraso de login      ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m08.%ESC%[0m%ESC%[32m Sair do Autologin               ⢸
 echo  =====================================
 echo.
+
 set /p opcao= %ESC%[7m%ESC%[1m%ESC%[5m৹ Digite a opção desejada:%ESC%[0m%ESC%[32m 
-echo ------------------------------
+
 if %opcao% equ 1 goto opcao1
 if %opcao% equ 2 goto opcao2
 if %opcao% equ 3 goto opcao3
@@ -226,13 +223,54 @@ goto menu
 
 :opcao4
 cls
+
+goto ds
+
+:ds
+echo ৹ Selecione por onde você deseja efetuar a leitura do Spoiler Perfeito desta semana.
+echo. 
+echo  ======================================
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m01.%ESC%[0m%ESC%[32m Abrir via Discord                ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m02.%ESC%[0m%ESC%[32m Abrir via navegador              ⢸
+echo ⢸ %ESC%[7m%ESC%[1m%ESC%[5m03.%ESC%[0m%ESC%[32m Voltar para o menu               ⢸
+echo  =====================================
+echo.
+set /p discord= %ESC%[7m%ESC%[1m%ESC%[5m৹ Digite a opção desejada:%ESC%[0m%ESC%[32m 
+
+if %discord% equ 1 goto ds1
+if %discord% equ 2 goto ds2
+if %discord% equ 3 goto ds3
+
+:: Opções de abertura para Spoiler Perfeito -----------------
+
+:ds1
+cls
+start C:\Users\%username%\AppData\Local\Discord\Update.exe --processStart Discord.exe
+
 echo  =======================================
 echo ⢸           Iniciando Discord          ⢸ 
 echo  =======================================
 
-start C:\Users\%username%\AppData\Local\Discord\Update.exe --processStart Discord.exe
+:: Abrindo a sala do Discord
 start discord://discord.com/channels/428180833044791297/1014981089921605723
 timeout /t 2 /nobreak
+goto menu
+
+:: --------------------------
+
+:ds2
+cls
+echo  =========================================
+echo ⢸          Iniciando Navegador           ⢸ 
+echo  =========================================
+
+start https://discord.com/channels/428180833044791297/1014981089921605723
+timeout /t 2 /nobreak
+goto menu
+
+:: --------------------------
+
+:ds3
 goto menu
 
 :: ----------------------------------------------------------
@@ -284,16 +322,6 @@ goto menu
 
 :opcao7
 cls
-echo  =====================
-echo ⢸   Fechando menu    ⢸ 
-echo  =====================
-timeout /t 2 /nobreak > nul
-exit
-
-:: ----------------------------------------------------------
-
-:opcao8
-cls
 echo  ==============================================
 echo ⢸    Alterar tempo de atraso entre logins     ⢸
 echo  ==============================================
@@ -302,8 +330,20 @@ set /p novo_timeout= %ESC%[7m%ESC%[1m%ESC%[5m৹ Digite o novo tempo de espera d
 if not "%novo_timeout%"=="" set TIMEOUT=%novo_timeout%
 echo.
 echo Tempo de espera alterado para %ESC%[7m%ESC%[1m%ESC%[5m%TIMEOUT% segundos%ESC%[0m%ESC%[32m.
+echo.
+echo Retornando ao menu...
 timeout /t 2 /nobreak > nul
 goto menu
+
+:: ----------------------------------------------------------
+
+:opcao8
+cls
+echo  =====================
+echo ⢸   Fechando menu    ⢸ 
+echo  =====================
+timeout /t 2 /nobreak > nul
+exit
 
 :: ----------------------------------------------------------
 
