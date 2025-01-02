@@ -71,8 +71,8 @@ if %opcao% equ 7 goto opcao7
 if %opcao% equ 8 goto opcao8
 
 :: Opção para sair do Menu
-if %opcao% equ x goto sair1
-if %opcao% equ X goto sair2
+if %opcao% equ x goto sair
+if %opcao% equ X goto sair
 
 :: Opção para dar erro quando informar opção acima do que há configurado
 if %opcao% GEQ 9 goto opcao9
@@ -535,17 +535,7 @@ goto menu
 
 :: ----------------------------------------------------------
 
-:sair1
-cls
-echo  ======================
-echo ⢸    Fechando menu    ⢸ 
-echo  ======================
-timeout /t 3 /nobreak > nul
-exit
-
-:: -----------------------------
-
-:sair2
+:sair
 cls
 echo  ======================
 echo ⢸    Fechando menu    ⢸ 
